@@ -1,14 +1,19 @@
 spring:
+  cloud:
+      refresh:
+        refreshable: none
   application:
     name: customer-service
   datasource:
-    url: jdbc:mysql://192.168.99.100:33306/chaos?useSSL=false
+    url: jdbc:mysql://192.168.99.100:33306/chaos?useSSL=false&allowPublicKeyRetrieval=true
     username: chaos
     password: chaos123
     driverClassName: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
+  profiles:
+    active: chaos-monkey
       
 server:
   port: 8093
