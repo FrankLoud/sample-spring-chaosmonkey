@@ -4,6 +4,14 @@ apply plugin: 'scala'
 dependencies {
     testCompile group: 'io.gatling.highcharts', name: 'gatling-charts-highcharts', version: '2.3.0'
 }
+repositories {
+   google()
+   jcenter()
+   maven {
+      url 'https://maven.google.com/'
+      name 'Google'
+   }
+}
 
 task loadTest(type: JavaExec) {
    dependsOn testClasses
